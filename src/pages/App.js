@@ -4,6 +4,7 @@ import { Alignment,
   Navbar,
   NavbarGroup,
   NavbarHeading,
+  Button,
   Card,
   Menu,
   MenuDivider,
@@ -11,7 +12,7 @@ import { Alignment,
 } from "@blueprintjs/core"
 import ReactPlayer from 'react-player'
 
-import './App.css'
+import './App.less'
 
 class App extends Component {
 
@@ -25,39 +26,32 @@ class App extends Component {
 
   render() {
     return (
-      <div className="bp3-dark">
-        <Navbar>
-          <NavbarGroup align={Alignment.CENTER} style={{'justify-content':'center'}}>
+      <div className='bp3-dark'>
+        <Navbar className='nav'>
+          <NavbarGroup align={Alignment.CENTER} className='nav-title'>
             <NavbarHeading >Live TV</NavbarHeading>
+          </NavbarGroup>
+          <NavbarGroup align={Alignment.RIGHT}>
+            <Button icon='menu'/>
           </NavbarGroup>
         </Navbar>
 
-        <Card
-          elevation={2}
-          style={{'padding':'0', 'margin':'10px'}}
-        >
+        <div className='main'>
           <ReactPlayer
             url={this.state.playUrl}
             controls
             width='100%'
             height='100%'
             style={{'width':'100%'}}
-
+            config={{
+              file: {
+                attributes: {
+                  crossOrigin: "anonymous"
+                }
+              }
+            }}
           />
-        </Card>
-
-        <Card elevation={2} style={{'padding':'0', 'margin':'30px 10px '}}>
-          <Menu>
-            <MenuItem icon="film" text="New text box" onClick={()=>{console.log(1)}}/>
-            <MenuDivider />
-            <MenuItem icon="film" text="New object" onClick={()=>{console.log(2)}} />
-            <MenuDivider />
-            <MenuItem icon="film" text="New text box" onClick={()=>{console.log(3)}} />
-            <MenuDivider />
-            <MenuItem icon="film" text="New object" onClick={()=>{console.log(4)}} />
-          </Menu>
-        </Card>
-
+        </div>
       </div>
     )
   }

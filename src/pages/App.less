@@ -1,0 +1,33 @@
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+:focus {outline:none;}
+a:focus {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  .nav-title {
+    justify-content: center;
+    width: 550px;
+  }
+}
+.main {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  .left-block {
+    flex-grow: 5;
+    padding: 0 5px;
+  }
+  .right-block {
+    flex-grow: 1;
+    padding: 0 5px;
+  }
+}
