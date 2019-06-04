@@ -5,6 +5,7 @@ import { Alignment,
   NavbarGroup,
   NavbarHeading,
   Button,
+  Drawer,
   Card,
   Menu,
   MenuDivider,
@@ -20,7 +21,8 @@ class App extends Component {
     super(props)
 
     this.state = {
-      playUrl:'http://dlhls.cdn.zhanqi.tv/zqlive/69410_SgVxl.m3u8',
+      menu:false,
+      playUrl:'',
     }
   }
 
@@ -32,7 +34,7 @@ class App extends Component {
             <NavbarHeading >Live TV</NavbarHeading>
           </NavbarGroup>
           <NavbarGroup align={Alignment.RIGHT}>
-            <Button icon='menu'/>
+            <Button icon='menu' minimal onClick={()=>{this.handleOpen()}}/>
           </NavbarGroup>
         </Navbar>
 
@@ -51,10 +53,18 @@ class App extends Component {
               }
             }}
           />
+          <Drawer
+            className='left-menu'
+            isOpen={this.state.menu}
+            onClose={()=>{this.handleClose()}}
+          ></Drawer>
         </div>
       </div>
     )
   }
+
+  handleOpen = () => this.setState({ menu: true })
+  handleClose = () => this.setState({ menu: false })
 }
 
 export default App
