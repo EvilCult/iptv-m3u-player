@@ -14,6 +14,7 @@ import { Alignment,
 import ReactPlayer from 'react-player'
 
 import './App.less'
+import urlList from '../utils/data'
 
 class App extends Component {
 
@@ -21,8 +22,9 @@ class App extends Component {
     super(props)
 
     this.state = {
+      filter: '',
       menu:false,
-      playUrl:'123',
+      playUrl:'http://223.110.245.170/PLTV/3/224/3221226316/index.m3u8',
     }
   }
 
@@ -63,33 +65,7 @@ class App extends Component {
               className='left-menu-filter'
             />
             <Menu className='left-menu-con'>
-              <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}}/>
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              <MenuDivider />
-              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+            {this.renderList()}
             </Menu>
           </Drawer>
         </div>
@@ -97,9 +73,20 @@ class App extends Component {
     )
   }
 
+  renderList () {
+    return urlList.map((item) => {
+      return (
+        <div key={item.title}>
+          <MenuDivider />
+          <MenuItem icon="film" text={item.title} onClick={()=>{this.handlePlay(item.url)}} />
+        </div>
+      )
+    })
+  }
+
   handleOpen = () => this.setState({ menu: true })
   handleClose = () => this.setState({ menu: false })
-  handlePlay = () => this.setState({ menu: false, playUrl: '' })
+  handlePlay = (url) => this.setState({ menu: false, playUrl: url })
 }
 
 export default App
