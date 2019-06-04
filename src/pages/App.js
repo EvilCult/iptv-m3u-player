@@ -6,7 +6,6 @@ import { Alignment,
   NavbarHeading,
   Button,
   Drawer,
-  Card,
   Menu,
   MenuDivider,
   MenuItem
@@ -54,10 +53,20 @@ class App extends Component {
             }}
           />
           <Drawer
-            className='left-menu'
+            className='left-menu bp3-dark'
             isOpen={this.state.menu}
             onClose={()=>{this.handleClose()}}
-          ></Drawer>
+          >
+              <Menu className='left-menu-con'>
+                <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}}/>
+                <MenuDivider />
+                <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+                <MenuDivider />
+                <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}} />
+                <MenuDivider />
+                <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              </Menu>
+          </Drawer>
         </div>
       </div>
     )
@@ -65,6 +74,7 @@ class App extends Component {
 
   handleOpen = () => this.setState({ menu: true })
   handleClose = () => this.setState({ menu: false })
+  handlePlay = () => this.setState({ menu: false, playUrl: '' })
 }
 
 export default App
