@@ -8,7 +8,8 @@ import { Alignment,
   Drawer,
   Menu,
   MenuDivider,
-  MenuItem
+  MenuItem,
+  InputGroup
 } from "@blueprintjs/core"
 import ReactPlayer from 'react-player'
 
@@ -21,7 +22,7 @@ class App extends Component {
 
     this.state = {
       menu:false,
-      playUrl:'',
+      playUrl:'123',
     }
   }
 
@@ -57,15 +58,39 @@ class App extends Component {
             isOpen={this.state.menu}
             onClose={()=>{this.handleClose()}}
           >
-              <Menu className='left-menu-con'>
-                <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}}/>
-                <MenuDivider />
-                <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-                <MenuDivider />
-                <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}} />
-                <MenuDivider />
-                <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
-              </Menu>
+            <InputGroup
+              leftIcon="filter"
+              className='left-menu-filter'
+            />
+            <Menu className='left-menu-con'>
+              <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}}/>
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New text box" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+              <MenuDivider />
+              <MenuItem icon="film" text="New object" onClick={()=>{this.handlePlay()}} />
+            </Menu>
           </Drawer>
         </div>
       </div>
