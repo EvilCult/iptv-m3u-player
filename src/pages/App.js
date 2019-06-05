@@ -16,7 +16,6 @@ import {
 import ReactPlayer from 'react-player'
 
 import './App.less'
-import urlList from '../utils/data'
 
 class App extends Component {
 

@@ -13,7 +13,9 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject"
+    "eject": "react-app-rewired eject",
+    "estart": "electron .",
+    "package": "electron-packager /var/www/h5tv LiveTV --platform=darwin --arch=x64 --out /var/www/h5tv --electron-version=3.0.4 --ignore=node_modules"
   },
   "eslintConfig": {
     "extends": "react-app"
