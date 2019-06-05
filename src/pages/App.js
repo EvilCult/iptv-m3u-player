@@ -37,7 +37,7 @@ class App extends Component {
     fetch(api)
     .then(res => res.json())
     .then(resData => {
-      console.log(resData)
+      this.setState({dataLit: resData})
     })
   }
 
@@ -108,14 +108,15 @@ class App extends Component {
     )
   }
 
-  renderList (tabName) {
+  renderList () {
+    const curTab = this.state.menuType
     const defaultList = [{"title":"CCTV-1","url":"http://223.110.245.170/PLTV/3/224/3221226316/index.m3u8"},{"title":"CCTV-2","url":"http://cctvcnch5c.v.wscdns.com/live/cctv2_2/index.m3u8"},{"title":"CCTV-3","url":"http://cctvcnch5c.v.wscdns.com/live/cctv3_2/index.m3u8"},{"title":"CCTV-4","url":"http://cctvcnch5c.v.wscdns.com/live/cctv4_2/index.m3u8"},{"title":"CCTV-5","url":"http://cctvcnch5c.v.wscdns.com/live/cctv5_2/index.m3u8"},{"title":"CCTV-6","url":"http://cctvcnch5c.v.wscdns.com/live/cctv6_2/index.m3u8"},{"title":"CCTV-7","url":"http://cctvcnch5c.v.wscdns.com/live/cctv7_2/index.m3u8"},{"title":"CCTV-8","url":"http://223.110.245.170/ott.js.chinamobile.com/PLTV/3/224/3221227205/index.m3u8"},{"title":"CCTV-9","url":"http://116.199.5.51:8114/index.m3u8?Fsv_chan_hls_se_idx=33&amp;FvSeid=1&amp;Fsv_ctype=LIVES&amp;Fsv_otype=1&amp;Provider_id=&amp;Pcontent_id=.m3u8"},{"title":"CCTV-10","url":"http://223.110.245.170/ott.js.chinamobile.com/PLTV/3/224/3221225550/index.m3u8"},{"title":"CCTV-11","url":"http://cctvcnch5c.v.wscdns.com/live/cctv11_2/index.m3u8"},{"title":"CCTV-12","url":"http://223.110.245.172/PLTV/3/224/3221225556/index.m3u8"},{"title":"CCTV-13","url":"http://cctvcnch5c.v.wscdns.com/live/cctv13_2/index.m3u8"},{"title":"CCTV-14","url":"http://121.31.30.90:8085/ysten-business/live/cctv-14/yst.m3u8"},{"title":"CCTV-15","url":"http://111.40.205.87/PLTV/88888888/224/3221225721/index.m3u8"}]
 
     let urlList
     if (Object.keys(this.state.dataLit).length === 0) {
       urlList = defaultList
     } else {
-      urlList = this.state.dataLit[tabName]
+      urlList = this.state.dataLit[curTab]
     }
 
     let result = []
