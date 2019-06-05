@@ -33,7 +33,12 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log('mount')
+    const api = 'https://raw.githubusercontent.com/EvilCult/iptv-m3u-maker/master/tv.json'
+    fetch(api)
+    .then(res => res.json())
+    .then(resData => {
+      console.log(resData)
+    })
   }
 
   render() {
