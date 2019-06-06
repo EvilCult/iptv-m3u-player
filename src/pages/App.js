@@ -26,7 +26,8 @@ class App extends Component {
       filter: '',
       menu:false,
       menuType: 'cctv',
-      playUrl: 'http://223.110.245.170/PLTV/3/224/3221226316/index.m3u8',
+      playUrl: null,
+      playing: false,
       dataLit: {},
       filterKey: ''
     }
@@ -42,13 +43,14 @@ class App extends Component {
   }
 
   render() {
+    console.log('render')
     return (
       <div className='bp3-dark'>
         <Navbar className='nav'>
           <NavbarGroup align={Alignment.CENTER} className='nav-title'>
             <NavbarHeading >Live TV</NavbarHeading>
           </NavbarGroup>
-          <NavbarGroup align={Alignment.RIGHT}>
+          <NavbarGroup align={Alignment.RIGHT}  className='nav-btn'>
             <Button icon='menu' minimal onClick={()=>{this.handleOpen()}}/>
           </NavbarGroup>
         </Navbar>
@@ -58,8 +60,8 @@ class App extends Component {
             url={this.state.playUrl}
             controls
             width='100%'
-            height='100%'
-            style={{'width':'100%'}}
+            height='315px'
+            playing={this.state.playing}
             config={{
               file: {
                 attributes: {
@@ -140,9 +142,16 @@ class App extends Component {
     })
   }
 
-  handleOpen = () => this.setState({ menu: true })
+  handleOpen = () => this.setState({ menu: true, filterKey: '' })
   handleClose = () => this.setState({ menu: false })
-  handlePlay = (url) => this.setState({ menu: false, playUrl: url })
+  // handlePlay = (url) => this.setState({ menu: false, playUrl: url })
+  handlePlay = (url) => {
+    this.setState(
+      {playUrl: null, playing: false},
+      () => {
+        this.setState({ menu: false, playUrl: url,  playing: true })
+    })
+  }
   handleTabChange = (tab) => this.setState({ menuType: tab })
   handleFilter = (e) =>  this.setState({ filterKey: e.target.value })
 }

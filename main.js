@@ -26,12 +26,12 @@ function createWindow () {
 
   // and load the index.html of the app.
   // /work/git/square/web
-  mainWindow.loadURL('http://localhost:8888/');
-  // mainWindow.loadURL(url.format({
-  //   pathname: path.join(__dirname, './build/index.html'),
-  //   protocol: 'file:',
-  //   slashes: true
-  // }))
+  // mainWindow.loadURL('http://localhost:8888/');
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, './build/index.html'),
+    protocol: 'file:',
+    slashes: true
+  }))
 
 
   // Open the DevTools.

@@ -7,7 +7,20 @@
     <meta name="theme-color" content="#000000" />
     <title>Live TV</title>
   </head>
-  <body style="-webkit-app-region: drag">
+  <style>
+      body {
+          -webkit-app-region: drag;
+          width:600px;
+          height:350px;
+          padding:0;
+          margin:0;
+          user-select:none;
+      }
+      ::-webkit-scrollbar {
+          display: none;
+      }
+  </style>
+  <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
