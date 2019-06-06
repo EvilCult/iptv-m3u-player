@@ -91,10 +91,9 @@ class App extends Component {
               onChange={this.handleTabChange}
               selectedTabId={this.state.menuType}
             >
-              <Tab id="cctv" title="中央频道"/>
+              <Tab id="cctv" title="CCTV"/>
               <Tab id="local" title="地方频道"/>
-              <Tab id="other" title="其他频道"/>
-              <Tab id="radio" title="广播频道"/>
+              <Tab id="other" title="影视频道"/>
             </Tabs>
           </Navbar.Group>
         </Navbar>
@@ -142,18 +141,11 @@ class App extends Component {
     })
   }
 
-  handleOpen = () => this.setState({ menu: true, filterKey: '' })
-  handleClose = () => this.setState({ menu: false })
-  // handlePlay = (url) => this.setState({ menu: false, playUrl: url })
-  handlePlay = (url) => {
-    this.setState(
-      {playUrl: null, playing: false},
-      () => {
-        this.setState({ menu: false, playUrl: url,  playing: true })
-    })
-  }
-  handleTabChange = (tab) => this.setState({ menuType: tab })
-  handleFilter = (e) =>  this.setState({ filterKey: e.target.value })
+  handleOpen      = ()    => this.setState({ menu     : true, filterKey: '', playUrl  : null, playing: false })
+  handleClose     = ()    => this.setState({ menu     : false })
+  handlePlay      = (url) => {this.setState({ menu    : false, playUrl : url,  playing: true })}
+  handleTabChange = (tab) => this.setState({ menuType : tab })
+  handleFilter    = (e)   => this.setState({ filterKey: e.target.value })
 }
 
 export default App
