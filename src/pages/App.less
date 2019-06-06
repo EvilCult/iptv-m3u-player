@@ -1,0 +1,44 @@
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+
+:focus {outline:none;}
+a:focus {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+a:active {text-decoration: none;}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  -webkit-app-region: drag !important;
+  top: 0;
+  height: 35px;
+  .nav-title {
+    justify-content: center;
+    width: 550px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .nav-btn {
+    height: 35px;
+    line-height: 35px;
+  }
+}
+.main {
+  margin-top: 35px;
+  display: flex;
+  flex-direction: row;
+}
+.left-menu {
+  background-color: #2a3741 !important;
+  .left-menu-filter {
+    width: 280px;
+    margin: 0px 8px;
+  }
+  .left-menu-con {
+    overflow: scroll;
+    margin-top: 0;
+  }
+}
