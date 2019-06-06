@@ -11,3 +11,5 @@
 目前仅打包了 Mac OS 的 App.
 
 以上
+
+视频演示: [YouTube](https://youtu.be/BhuYB4l3NUY)
