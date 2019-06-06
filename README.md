@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# iptv-m3u-player
-=======
 ## Live TV
 
 #### 简介
@@ -14,4 +11,4 @@
 目前仅打包了 Mac OS 的 App.
 
 以上
->>>>>>> dev
+
