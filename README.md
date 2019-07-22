@@ -6,10 +6,4 @@
 
 基于Electron + React 开发的**轻量级**桌面端播放器.
 
-频道数据会定期更新.
-
-目前仅打包了 Mac OS 的 App.
-
-以上
-
-视频演示: [YouTube](https://youtu.be/BhuYB4l3NUY)
+更多内容详见: [项目说明](https://evilcult.dev/07/21/2019/IPTV-Player/)
